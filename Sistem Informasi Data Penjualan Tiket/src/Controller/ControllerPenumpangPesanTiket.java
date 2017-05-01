@@ -5,10 +5,12 @@
  */
 package Controller;
 
+import java.awt.event.ActionListener;
+
 /**
  *
- * @author USER
+ * @author KURNIA
  */
-public class ControllerPenumpangPesanTiket {
+public class ControllerPenumpangPesanTiket implements ActionListener {
     
 }
