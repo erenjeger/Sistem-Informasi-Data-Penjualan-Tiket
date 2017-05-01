@@ -5,10 +5,42 @@
  */
 package Controller;
 
+import Model.Aplikasi;
+import Model.Penumpang;
+import View.HalamanPenumpang;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+
 /**
  *
- * @author USER
+ * @author KURNIA
  */
-public class ControllerHalamanPenumpang {
+public class ControllerHalamanPenumpang implements ActionListener {    
+    Aplikasi model;
+    HalamanPenumpang view;
+    Penumpang pen;
     
+    public ControllerHalamanPenumpang(Aplikasi model) {
+        this.model = model;
+        view = new HalamanPenumpang();
+        view.setVisible(true);
+        view.addListener(this);
+    }
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        Object source = new Object();
+        
+        if(source.equals(view.getBtnPesanTiket())) {
+            new ControllerPenumpangPesanTiket(model);
+            view.dispose();
+        } else if (source.equals(view.getBtnLihatTiket())) {
+            new ControllerPenumpangLihatTiket(model);
+            view.dispose();
+        } else if (source.equals(view.getBtnKeluar())) {
+            new ControllerHome(model);
+            view.dispose();
+        }
+    }
 }
