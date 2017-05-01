@@ -5,6 +5,7 @@
  */
 package Controller;
 
+
 import Model.AplikasiGUI;
 import Model.Penumpang;
 import View.HalamanPenumpang;
@@ -17,6 +18,7 @@ import java.awt.event.ActionListener;
  * @author KURNIA
  */
 public class ControllerHalamanPenumpang implements ActionListener {    
+
     AplikasiGUI model;
     HalamanPenumpang view;
     Penumpang pen;
@@ -43,6 +45,5 @@ public class ControllerHalamanPenumpang implements ActionListener {
             view.dispose();
         }
     }
-    
-    
 }
+    

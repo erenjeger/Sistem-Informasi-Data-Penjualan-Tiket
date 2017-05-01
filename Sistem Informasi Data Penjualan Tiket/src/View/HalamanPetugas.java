@@ -4,10 +4,11 @@
  * and open the template in the editor.
  */
 package View;
-
+import java.awt.event.ActionListener;
+import javax.swing.JButton;
 /**
  *
- * @author USER
+ * @author KURNIA
  */
 public class HalamanPetugas extends javax.swing.JFrame {
 
@@ -27,57 +28,137 @@ public class HalamanPetugas extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        btnLihatKereta = new javax.swing.JButton();
+        btnLihatRute = new javax.swing.JButton();
+        btnLihatStasiun = new javax.swing.JButton();
+        btnLogout = new javax.swing.JButton();
+        btnLihatPenumpang = new javax.swing.JButton();
+        jPetugas = new javax.swing.JLabel();
+        btnTambahKereta = new javax.swing.JButton();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        btnLihatKereta.setText("Lihat Kereta");
+        btnLihatKereta.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnLihatKeretaActionPerformed(evt);
+            }
+        });
+
+        btnLihatRute.setText("Lihat Rute");
+
+        btnLihatStasiun.setText("Lihat Stasiun");
+
+        btnLogout.setText("Logout");
+
+        btnLihatPenumpang.setText("Lihat Penumpang");
+
+        jPetugas.setText("PETUGAS");
+
+        btnTambahKereta.setText("Tambah Kereta");
+        btnTambahKereta.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnTambahKeretaActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btnLogout)
+                .addGap(32, 32, 32))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(107, 107, 107)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(btnTambahKereta, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnLihatStasiun, javax.swing.GroupLayout.DEFAULT_SIZE, 155, Short.MAX_VALUE)
+                    .addComponent(btnLihatRute, javax.swing.GroupLayout.DEFAULT_SIZE, 155, Short.MAX_VALUE)
+                    .addComponent(btnLihatPenumpang, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnLihatKereta, javax.swing.GroupLayout.DEFAULT_SIZE, 155, Short.MAX_VALUE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(jPetugas, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(108, 108, 108))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(27, 27, 27)
+                .addComponent(jPetugas)
+                .addGap(18, 18, 18)
+                .addComponent(btnLihatPenumpang, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(btnLihatKereta, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(btnLihatRute, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(btnLihatStasiun, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(btnTambahKereta, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 72, Short.MAX_VALUE)
+                .addComponent(btnLogout, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(HalamanPetugas.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(HalamanPetugas.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(HalamanPetugas.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(HalamanPetugas.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
+    private void btnLihatKeretaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLihatKeretaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnLihatKeretaActionPerformed
 
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new HalamanPetugas().setVisible(true);
-            }
-        });
+    private void btnTambahKeretaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTambahKeretaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnTambahKeretaActionPerformed
+
+    
+    
+    public JButton getBtnLihatPenumpang() {
+        return btnLihatPenumpang;
     }
+    
+    public JButton getBtnLihatKereta() {
+        return btnLihatKereta;
+    }
+    
+    public JButton getBtnLihatRute() {
+        return btnLihatRute;
+    }
+    
+    public JButton getbtnLihatStasiun() {
+        return btnLihatStasiun;
+    }
+    
+    public JButton getbtnLogout() {
+        return btnLogout;
+    }
+    
+    public JButton getbtnTambahKereta() {
+        return btnTambahKereta;
+    }
+    
+    
+    
+    public void addListener(ActionListener e) {
+        btnLihatPenumpang.addActionListener(e);
+        btnLihatKereta.addActionListener(e);
+        btnLihatRute.addActionListener(e);
+        btnLihatStasiun.addActionListener(e);
+        btnLogout.addActionListener(e);
+        btnTambahKereta.addActionListener(e);
+    }
+    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnLihatKereta;
+    private javax.swing.JButton btnLihatPenumpang;
+    private javax.swing.JButton btnLihatRute;
+    private javax.swing.JButton btnLihatStasiun;
+    private javax.swing.JButton btnLogout;
+    private javax.swing.JButton btnTambahKereta;
+    private javax.swing.JLabel jPetugas;
     // End of variables declaration//GEN-END:variables
 }

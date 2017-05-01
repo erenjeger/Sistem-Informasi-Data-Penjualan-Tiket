@@ -5,9 +5,13 @@
  */
 package View;
 
+import java.awt.event.ActionListener;
+import javax.swing.JButton;
+import javax.swing.JTextField;
+
 /**
  *
- * @author USER
+ * @author KURNIA
  */
 public class PetugasTambahKereta extends javax.swing.JFrame {
 
@@ -27,57 +31,181 @@ public class PetugasTambahKereta extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jtmbhKereta = new javax.swing.JLabel();
+        lNamaKereta = new javax.swing.JLabel();
+        lS1 = new javax.swing.JLabel();
+        lS2 = new javax.swing.JLabel();
+        txNamaKereta = new javax.swing.JTextField();
+        btnTambah = new javax.swing.JButton();
+        txS1 = new javax.swing.JTextField();
+        txS2 = new javax.swing.JTextField();
+        btnKembali = new javax.swing.JButton();
+        iKelas = new javax.swing.JLabel();
+        txKelas = new javax.swing.JTextField();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        jtmbhKereta.setText("Tambah Kereta");
+
+        lNamaKereta.setText("Nama Kereta");
+
+        lS1.setText("Stasiun Awal");
+
+        lS2.setText("Stasiun Tujuan");
+
+        txNamaKereta.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txNamaKeretaActionPerformed(evt);
+            }
+        });
+
+        btnTambah.setText("Tambah");
+
+        btnKembali.setText("Kembali");
+        btnKembali.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnKembaliActionPerformed(evt);
+            }
+        });
+
+        iKelas.setText("Kelas");
+
+        txKelas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txKelasActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(187, 187, 187)
+                        .addComponent(jtmbhKereta))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(37, 37, 37)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(btnKembali)
+                                .addGap(18, 18, 18)
+                                .addComponent(btnTambah, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(lNamaKereta, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(lS1)
+                                    .addComponent(lS2)
+                                    .addComponent(iKelas))
+                                .addGap(40, 40, 40)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(txNamaKereta)
+                                    .addComponent(txS1)
+                                    .addComponent(txS2, javax.swing.GroupLayout.DEFAULT_SIZE, 276, Short.MAX_VALUE)
+                                    .addComponent(txKelas))))))
+                .addContainerGap(33, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(22, 22, 22)
+                .addComponent(jtmbhKereta)
+                .addGap(29, 29, 29)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lNamaKereta)
+                    .addComponent(txNamaKereta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lS1)
+                    .addComponent(txS1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lS2)
+                    .addComponent(txS2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(iKelas)
+                    .addComponent(txKelas, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 33, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnKembali, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnTambah, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(68, 68, 68))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(PetugasTambahKereta.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(PetugasTambahKereta.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(PetugasTambahKereta.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(PetugasTambahKereta.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
+    private void txNamaKeretaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txNamaKeretaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txNamaKeretaActionPerformed
 
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new PetugasTambahKereta().setVisible(true);
-            }
-        });
+    private void btnKembaliActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnKembaliActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnKembaliActionPerformed
+
+    private void txKelasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txKelasActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txKelasActionPerformed
+
+  
+    public JButton getBtnTambah() {
+        return btnTambah;
     }
-
+    
+    public JButton getBtnKembali() {
+        return btnKembali;
+    }
+    
+    public void setNamaKereta(String nama) {
+        txNamaKereta.setText(nama);
+    }
+    
+    public void setStasiun1(String s1) {
+        txS1.setText(s1);
+    }
+    
+    public void setStasiun2(String s2) {
+        txS2.setText(s2);
+    }
+    
+    public String getNamaKereta() {
+        return txNamaKereta.getText();
+    }
+    
+    public String getStasiun1() {
+        return txS1.getText();
+    }
+    
+    public String getStasiun2() {
+        return txS2.getText();
+    }
+    
+    public String getKelas() {
+        return txKelas.getText();
+    }
+    
+    public void addListerner(ActionListener e) {
+        btnTambah.addActionListener(e);
+        btnKembali.addActionListener(e);
+        txNamaKereta.addActionListener(e);
+        txS1.addActionListener(e);
+        txS2.addActionListener(e);
+        txKelas.addActionListener(e);
+    }
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnKembali;
+    private javax.swing.JButton btnTambah;
+    private javax.swing.JLabel iKelas;
+    private javax.swing.JLabel jtmbhKereta;
+    private javax.swing.JLabel lNamaKereta;
+    private javax.swing.JLabel lS1;
+    private javax.swing.JLabel lS2;
+    private javax.swing.JTextField txKelas;
+    private javax.swing.JTextField txNamaKereta;
+    private javax.swing.JTextField txS1;
+    private javax.swing.JTextField txS2;
     // End of variables declaration//GEN-END:variables
 }
