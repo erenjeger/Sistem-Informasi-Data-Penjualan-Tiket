@@ -5,7 +5,8 @@
  */
 package Controller;
 
-import Model.Aplikasi;
+
+import Model.AplikasiGUI;
 import Model.Penumpang;
 import View.HalamanPenumpang;
 import java.awt.event.ActionEvent;
@@ -17,11 +18,12 @@ import java.awt.event.ActionListener;
  * @author KURNIA
  */
 public class ControllerHalamanPenumpang implements ActionListener {    
-    Aplikasi model;
+
+    AplikasiGUI model;
     HalamanPenumpang view;
     Penumpang pen;
     
-    public ControllerHalamanPenumpang(Aplikasi model) {
+    public ControllerHalamanPenumpang(AplikasiGUI model) {
         this.model = model;
         view = new HalamanPenumpang();
         view.setVisible(true);
@@ -33,10 +35,10 @@ public class ControllerHalamanPenumpang implements ActionListener {
         Object source = new Object();
         
         if(source.equals(view.getBtnPesanTiket())) {
-            new ControllerPenumpangPesanTiket(model);
+            new ControllerPenumpangPesanTiket();
             view.dispose();
         } else if (source.equals(view.getBtnLihatTiket())) {
-            new ControllerPenumpangLihatTiket(model);
+            new ControllerPenumpangLihatTiket();
             view.dispose();
         } else if (source.equals(view.getBtnKeluar())) {
             new ControllerHome(model);
@@ -44,3 +46,4 @@ public class ControllerHalamanPenumpang implements ActionListener {
         }
     }
 }
+    
