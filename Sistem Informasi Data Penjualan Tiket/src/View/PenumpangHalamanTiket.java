@@ -5,14 +5,19 @@
  */
 package View;
 
+import Model.Rute;
+import java.awt.event.ActionListener;
+import java.sql.Date;
+import javax.swing.JButton;
+
 /**
  *
- * @author USER
+ * @author KURNIA
  */
 public class PenumpangHalamanTiket extends javax.swing.JFrame {
 
     /**
-     * Creates new form PenumpangHalamanTiket
+     * Creates new form HalamanTiketPenumpang
      */
     public PenumpangHalamanTiket() {
         initComponents();
@@ -27,57 +32,221 @@ public class PenumpangHalamanTiket extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        lNama = new javax.swing.JLabel();
+        lNamaKereta = new javax.swing.JLabel();
+        lS1 = new javax.swing.JLabel();
+        lS2 = new javax.swing.JLabel();
+        lKelas = new javax.swing.JLabel();
+        lbNama = new javax.swing.JLabel();
+        lbNamaKereta = new javax.swing.JLabel();
+        lbS1 = new javax.swing.JLabel();
+        lbS2 = new javax.swing.JLabel();
+        lbKelas = new javax.swing.JLabel();
+        btnOK = new javax.swing.JButton();
+        btnLogout = new javax.swing.JButton();
+        lbHeader = new javax.swing.JLabel();
+        lNoId = new javax.swing.JLabel();
+        lbKodeTiket = new javax.swing.JLabel();
+        lTgl = new javax.swing.JLabel();
+        lbTanggal = new javax.swing.JLabel();
+        lHarga = new javax.swing.JLabel();
+        lbHarga = new javax.swing.JLabel();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        lNama.setText("Nama ");
+
+        lNamaKereta.setText("Nama Kereta");
+
+        lS1.setText("Stasiun Awal");
+
+        lS2.setText("Stasiun Tujuan");
+
+        lKelas.setText("Kelas");
+
+        btnOK.setText("OK");
+
+        btnLogout.setText("Logout");
+
+        lbHeader.setText("TIKET");
+
+        lNoId.setText("ID Penumpang");
+
+        lTgl.setText("Tanggal");
+
+        lHarga.setText("Harga");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(184, 184, 184)
+                .addComponent(lbHeader, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(230, Short.MAX_VALUE))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(33, 33, 33)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(btnLogout)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btnOK, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(24, 24, 24))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lS2)
+                            .addComponent(lS1))
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lbS2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(lbS1, javax.swing.GroupLayout.PREFERRED_SIZE, 292, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(0, 0, Short.MAX_VALUE))))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(lKelas)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(lbKelas, javax.swing.GroupLayout.PREFERRED_SIZE, 344, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(34, 34, 34))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(lNamaKereta)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(lbNamaKereta, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(lNama)
+                                    .addComponent(lTgl)
+                                    .addComponent(lNoId))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                        .addComponent(lbTanggal, javax.swing.GroupLayout.PREFERRED_SIZE, 325, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(lbNama, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 328, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(lbKodeTiket, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 292, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(lHarga)
+                                .addGap(49, 49, 49)
+                                .addComponent(lbHarga, javax.swing.GroupLayout.PREFERRED_SIZE, 319, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(lbHeader)
+                .addGap(25, 25, 25)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(lNoId)
+                    .addComponent(lbKodeTiket, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(lNama)
+                    .addComponent(lbNama, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lbTanggal, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lTgl))
+                .addGap(13, 13, 13)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(lbNamaKereta, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(lS1)
+                            .addComponent(lbS1, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(lS2, javax.swing.GroupLayout.DEFAULT_SIZE, 21, Short.MAX_VALUE)
+                            .addComponent(lbS2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addComponent(lNamaKereta))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lKelas)
+                    .addComponent(lbKelas, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(lHarga)
+                    .addComponent(lbHarga, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 60, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnOK, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnLogout, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(26, 26, 26))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(PenumpangHalamanTiket.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(PenumpangHalamanTiket.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(PenumpangHalamanTiket.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(PenumpangHalamanTiket.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new PenumpangHalamanTiket().setVisible(true);
-            }
-        });
+    
+    public JButton getBtnOk() {
+        return btnOK;
     }
+    
+    public JButton getBtnLogout() {
+        return btnLogout;
+    }
+    
+    public void setLbforNoID(String lbKodeTiket) {
+        this.lbKodeTiket.setText(lbKodeTiket);
+    }
+    
+    public void setLbforNama(String lbNama) {
+        this.lbNama.setText(lbNama);
+    }
+     
+    public void setLbforTanggal(Date lbTanggal) {
+        this.lbTanggal.setText(lbTanggal);
+    }
+      
+    public void setLbforNKereta(String lbNamaKereta) {
+        this.lbNamaKereta.setText(lbNamaKereta);
+    }
+       
+    public void setLbforStasiun1(Rute lbS1) {
+        this.lbS1.setText(lbS1);
+    }
+    
+    public void setLbforStasiun2(Rute lbS2) {
+        this.lbS2.setText(lbS2);
+    }
+     
+    public void setLbforKelas(String lbKelas) {
+        this.lbKelas.setText(lbKelas);
+    }
+      
+    public void setLbforHarga(long lbHarga) {
+        this.lbHarga.setText(Long.toString(lbHarga));
+    }
+    
+    
+    public void addListener(ActionListener e) {
+        btnOK.addActionListener(e);
+        btnLogout.addActionListener(e);
+    }
+    
+  
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnLogout;
+    private javax.swing.JButton btnOK;
+    private javax.swing.JLabel lHarga;
+    private javax.swing.JLabel lKelas;
+    private javax.swing.JLabel lNama;
+    private javax.swing.JLabel lNamaKereta;
+    private javax.swing.JLabel lNoId;
+    private javax.swing.JLabel lS1;
+    private javax.swing.JLabel lS2;
+    private javax.swing.JLabel lTgl;
+    private javax.swing.JLabel lbHarga;
+    private javax.swing.JLabel lbHeader;
+    private javax.swing.JLabel lbKelas;
+    private javax.swing.JLabel lbKodeTiket;
+    private javax.swing.JLabel lbNama;
+    private javax.swing.JLabel lbNamaKereta;
+    private javax.swing.JLabel lbS1;
+    private javax.swing.JLabel lbS2;
+    private javax.swing.JLabel lbTanggal;
     // End of variables declaration//GEN-END:variables
 }
